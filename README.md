@@ -144,7 +144,7 @@ Prebuilt binaries ship with every [GitHub release](https://github.com/kekurttel/
 - Linux Desktop Beta: `Rubato-<version>-linux-x64.tar.gz`
 - Windows Desktop Beta: `Rubato-<version>-windows-x64.zip`
 
-Pick the assets attached to the latest release. The `releases/` folder in this repository may lag behind; the Releases page is authoritative.
+Pick the assets attached to the latest release.
 
 The tutorials below stay for everyday installs, and [Build from source](#build-from-source) remains for contributors who want to compile Rubato themselves.
 
