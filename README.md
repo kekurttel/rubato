@@ -138,21 +138,30 @@ Do not treat the Desktop Beta as feature-complete parity with mobile.
 
 ## Downloads
 
+Prebuilt binaries ship with every [GitHub release](https://github.com/kekurttel/rubato/releases) — no source build needed:
+
+- Android APK — recommended, primary experience: `Rubato-<version>-android.apk`
+- Linux Desktop Beta: `Rubato-<version>-linux-x64.tar.gz`
+- Windows Desktop Beta: `Rubato-<version>-windows-x64.zip`
+
+Pick the assets attached to the latest release. The `releases/` folder in this repository may lag behind; the Releases page is authoritative.
+
+The tutorials below stay for everyday installs, and [Build from source](#build-from-source) remains for contributors who want to compile Rubato themselves.
+
 ### Android — recommended
 
-A ready-to-install APK is included at `releases/android/Rubato-0.1.0.apk` and is also attached to the GitHub release.
-
-1. Download the APK to your Android device.
-2. Open it from Files / Downloads.
-3. Allow installation from that source if Android asks.
-4. Install and launch Rubato.
-5. Grant music/media access when requested if you want to use local files.
+1. Open the [latest release](https://github.com/kekurttel/rubato/releases/latest) on your Android device.
+2. Download the `Rubato-<version>-android.apk` asset.
+3. Open it from Files / Downloads.
+4. Allow installation from that source if Android asks.
+5. Install and launch Rubato.
+6. Grant music/media access when requested if you want to use local files.
 
 Android 13+ may present the media permission separately from notification permission. Both are only needed for their respective features.
 
 ### Linux — Desktop Beta
 
-The prebuilt archive is `releases/linux/Rubato-Desktop-Beta-linux-x64.tar.gz`.
+Download `Rubato-<version>-linux-x64.tar.gz` from the [latest release](https://github.com/kekurttel/rubato/releases/latest).
 
 ```bash
 # 1. Download the archive, then enter the directory where it is saved.
@@ -162,7 +171,7 @@ cd ~/Downloads
 mkdir -p rubato-linux-x64
 
 # 3. Extract the archive into that directory.
-tar -xzf Rubato-Desktop-Beta-linux-x64.tar.gz -C rubato-linux-x64
+tar -xzf Rubato-<version>-linux-x64.tar.gz -C rubato-linux-x64
 
 # 4. Start Rubato.
 cd rubato-linux-x64
@@ -184,7 +193,9 @@ The Linux release is x64. Desktop Beta compatibility is intentionally marked as 
 
 ### Windows — Desktop Beta
 
-A Windows binary is produced by the release workflow when a release tag is created. If you are building locally, use a Windows machine with Flutter desktop support and Visual Studio's C++ desktop workload installed:
+Download `Rubato-<version>-windows-x64.zip` from the [latest release](https://github.com/kekurttel/rubato/releases/latest), extract it anywhere, and run `rubato.exe`.
+
+A fresh Windows bundle is produced by the release workflow for every release tag. If you are building locally instead, use a Windows machine with Flutter desktop support and Visual Studio's C++ desktop workload installed:
 
 ```powershell
 cd aurora\apps\aurora_mobile
