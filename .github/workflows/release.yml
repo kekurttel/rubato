@@ -60,6 +60,8 @@ jobs:
 
   windows:
     runs-on: windows-latest
+    env:
+      CL: /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNING
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
