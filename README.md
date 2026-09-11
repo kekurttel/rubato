@@ -1,16 +1,12 @@
 <div align="center">
 
+<img src="docs/branding/golden-flow-wave-icon.png" width="160" alt="Rubato logo">
+
 # RUBATO
 
 **A local-first music player built around the way you actually listen.**
 
-[Download](#downloads) · [How it works](#how-it-works) · [Privacy](#privacy) · [Desktop Beta](#desktop-beta)
-
-<br>
-
-<img src="docs/screenshots/home-mobile.png" width="220" alt="Rubato mobile home screen">
-<img src="docs/screenshots/ytmusic-mobile.png" width="220" alt="Rubato YouTube Music library">
-<img src="docs/screenshots/home-desktop.png" width="560" alt="Rubato desktop home screen">
+[Download](#downloads) · [Screens](#screens) · [How it works](#how-it-works) · [Privacy](#privacy) · [Desktop Beta](#desktop-beta)
 
 </div>
 
@@ -40,16 +36,51 @@ The interface is intentionally closer to a quiet listening room than a conventio
 ### Mobile
 
 <p align="center">
-  <img src="docs/screenshots/home-mobile.png" width="220" alt="Home">
-  <img src="docs/screenshots/search-mobile.png" width="220" alt="Search">
-  <img src="docs/screenshots/library-mobile.png" width="220" alt="Library">
-  <img src="docs/screenshots/downloads-mobile.png" width="220" alt="Downloads">
+  <img src="docs/screenshots/home-mobile.png" width="180" alt="Mobile Home">
+  <img src="docs/screenshots/search-mobile.png" width="180" alt="Mobile Search">
+  <img src="docs/screenshots/library-mobile.png" width="180" alt="Mobile Library">
+  <br>
+  <sub>Home · Search · Library</sub>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/downloads-mobile.png" width="180" alt="Mobile Downloads">
+  <img src="docs/screenshots/you-mobile.png" width="180" alt="Mobile You">
+  <img src="docs/screenshots/ytmusic-mobile.png" width="180" alt="Mobile YouTube Music">
+  <br>
+  <sub>Downloads · You · YouTube Music</sub>
 </p>
 
 ### Desktop
 
 <p align="center">
-  <img src="docs/screenshots/home-desktop.png" width="720" alt="Desktop home">
+  <img src="docs/screenshots/home-desktop.png" width="720" alt="Desktop Home">
+  <br>
+  <sub>Home</sub>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/search-desktop.png" width="720" alt="Desktop Search">
+  <br>
+  <sub>Search</sub>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/library-desktop.png" width="720" alt="Desktop Library">
+  <br>
+  <sub>Library</sub>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/you-desktop.png" width="720" alt="Desktop You">
+  <br>
+  <sub>You</sub>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/ytmusic-desktop.png" width="720" alt="Desktop YouTube Music">
+  <br>
+  <sub>YouTube Music</sub>
 </p>
 
 The desktop UI is intentionally kept close to the mobile product, but it is not yet the main target. Expect incomplete desktop-specific polish and compatibility gaps.
