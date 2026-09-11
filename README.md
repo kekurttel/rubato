@@ -196,7 +196,7 @@ The included APK and Linux bundle are release artifacts, not personal backups. N
 
 ## License
 
-GNU General Public License v2.0 (GPL-2.0). See `LICENSE`.
+GNU General Public License v2.0 (GPL-2.0). See `LICENSE`. If you distribute a modified version, the modified source must remain available under GPL-2.0; a public fork is the simplest way to comply.
 
 <div align="center">
 
