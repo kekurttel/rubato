@@ -196,7 +196,7 @@ The included APK and Linux bundle are release artifacts, not personal backups. N
 
 ## License
 
-MIT. See `LICENSE`.
+GNU General Public License v2.0 (GPL-2.0). See `LICENSE`.
 
 <div align="center">
 
