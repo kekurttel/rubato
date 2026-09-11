@@ -207,7 +207,10 @@ final class DownloadLocationNotifier extends Notifier<DownloadLocation> {
 /// itself has no `File` path). Falls back to the app-private folder
 /// when external storage is unavailable (desktop, failures).
 Future<Directory> resolveDownloadDir(DownloadLocation location) async {
-  if (location == DownloadLocation.externalMusic) {
+  // getExternalStorageDirectory is Android-only: on desktop it throws
+  // UnimplementedError (an Error, not an Exception, so `on Exception`
+  // would not catch it). Guard by platform instead of catching.
+  if (location == DownloadLocation.externalMusic && Platform.isAndroid) {
     try {
       final external = await getExternalStorageDirectory();
       if (external != null) {
