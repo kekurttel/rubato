@@ -1,0 +1,16 @@
+# Shared analyzer configuration for every Aurora package.
+#
+# Each package has its own tiny analysis_options.yaml that includes this
+# file by relative path. The `very_good_analysis` include below resolves
+# against the analyzed package's own package config, so every package
+# must list `very_good_analysis` in dev_dependencies.
+
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - '**/*.freezed.dart'
+    - '**/*.g.dart'
+  language:
+    strict-casts: true
+    strict-raw-types: true

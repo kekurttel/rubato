@@ -1,0 +1,9 @@
+# Codegen options for packages/core.
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Always call toJson() on nested freezed models (e.g. the
+          # track/artist/album lists inside SearchPage).
+          explicit_to_json: true

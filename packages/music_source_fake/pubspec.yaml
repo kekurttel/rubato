@@ -1,0 +1,18 @@
+name: aurora_music_source_fake
+description: Deterministic fake catalog for tests and dev (spec section 7).
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  aurora_core:
+    path: ../core
+  aurora_music_source:
+    path: ../music_source
+  meta: ^1.15.0
+
+dev_dependencies:
+  test: ^1.25.0
+  very_good_analysis: ^10.3.0

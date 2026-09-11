@@ -1,0 +1,16 @@
+name: aurora_reco
+description: Aurora on-device recommendation engine (spec section 10, no network).
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  aurora_core:
+    path: ../core
+  meta: ^1.15.0
+
+dev_dependencies:
+  test: ^1.25.0
+  very_good_analysis: ^10.3.0

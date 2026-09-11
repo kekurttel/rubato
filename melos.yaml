@@ -1,0 +1,29 @@
+name: aurora
+description: Aurora Player monorepo (MYT-modern successor).
+
+packages:
+  - apps/**
+  - packages/**
+
+scripts:
+  get:
+    run: melos exec -- flutter pub get
+    description: Fetch dependencies in every package.
+  analyze:
+    run: melos exec -- flutter analyze --no-pub
+    description: Analyze every package (0 issues required).
+  test:
+    run: melos exec -- flutter test --no-pub
+    description: Run tests in every package.
+  gen:
+    run: melos exec -c 1 -- 'dart run build_runner build --delete-conflicting-outputs'
+    description: Run code generation (freezed/json_serializable).
+  gen:watch:
+    run: melos exec -c 1 -- 'dart run build_runner watch --delete-conflicting-outputs'
+    description: Watch-mode code generation for local development.
+  format:
+    run: melos exec -- dart format --line-length 80 lib test tool
+    description: Format Dart sources (80 columns).
+  ci:
+    run: melos run analyze && melos run test
+    description: Full CI gate (analyze + test).

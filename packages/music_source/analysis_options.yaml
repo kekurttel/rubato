@@ -1,0 +1,2 @@
+# Resolves to the shared root configuration (see aurora/analysis_options.yaml).
+include: ../../analysis_options.yaml

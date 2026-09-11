@@ -1,0 +1,51 @@
+name: aurora_mobile
+description: Aurora Player — privacy-first music player (MYT-modern successor).
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.12.0
+  flutter: '>=3.44.0'
+
+dependencies:
+  audio_service: ^0.18.15
+  aurora_core:
+    path: ../../packages/core
+  aurora_database:
+    path: ../../packages/database
+  aurora_downloads:
+    path: ../../packages/downloads
+  aurora_music_source:
+    path: ../../packages/music_source
+  aurora_music_source_fake:
+    path: ../../packages/music_source_fake
+  aurora_music_source_local:
+    path: ../../packages/music_source_local
+  aurora_music_source_ytdlp:
+    path: ../../packages/music_source_ytdlp
+  aurora_playback:
+    path: ../../packages/playback
+  aurora_reco:
+    path: ../../packages/reco
+  aurora_ui_kit:
+    path: ../../packages/ui_kit
+  drift: ^2.28.0
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  go_router: ^14.8.1
+  just_audio_media_kit: ^2.1.0
+  media_kit_libs_linux: ^1.2.1
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  riverpod_annotation: ^2.6.1
+  shared_preferences: ^2.3.3
+  webview_flutter: ^4.14.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^10.3.0
+
+flutter:
+  uses-material-design: true

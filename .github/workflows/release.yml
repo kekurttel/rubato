@@ -1,0 +1,101 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - 'desktop-beta*'
+
+permissions:
+  contents: write
+
+jobs:
+  android:
+    if: startsWith(github.ref_name, 'v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.44.0'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build APK
+        working-directory: apps/aurora_mobile
+        run: |
+          flutter pub get
+          flutter build apk --release
+      - name: Upload Android artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rubato-android
+          path: apps/aurora_mobile/build/app/outputs/flutter-apk/app-release.apk
+
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.44.0'
+      - name: Install Linux dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+      - name: Build Linux bundle
+        working-directory: apps/aurora_mobile
+        run: |
+          flutter pub get
+          flutter build linux --release
+          tar -czf rubato-linux-x64.tar.gz -C build/linux/x64/release/bundle .
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rubato-linux
+          path: apps/aurora_mobile/rubato-linux-x64.tar.gz
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.44.0'
+      - name: Build Windows bundle
+        working-directory: apps/aurora_mobile
+        shell: pwsh
+        run: |
+          flutter pub get
+          flutter build windows --release
+          Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath Rubato-Desktop-Beta-windows-x64.zip
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rubato-windows
+          path: apps/aurora_mobile/Rubato-Desktop-Beta-windows-x64.zip
+
+  publish:
+    needs: [android, linux, windows]
+    if: always() && (startsWith(github.ref_name, 'v') || startsWith(github.ref_name, 'desktop-beta')) && needs.linux.result == 'success' && needs.windows.result == 'success' && (startsWith(github.ref_name, 'desktop-beta') || needs.android.result == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+      - name: Rename release files
+        run: |
+          if [ -d dist/rubato-android ]; then cp dist/rubato-android/app-release.apk dist/Rubato-${GITHUB_REF_NAME}-android.apk; fi
+          cp dist/rubato-linux/rubato-linux-x64.tar.gz dist/Rubato-${GITHUB_REF_NAME}-linux-x64.tar.gz
+          cp dist/rubato-windows/Rubato-Desktop-Beta-windows-x64.zip dist/Rubato-${GITHUB_REF_NAME}-windows-x64.zip
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ startsWith(github.ref_name, 'desktop-beta') && 'Rubato Desktop Beta' || format('Rubato {0}', github.ref_name) }}
+          prerelease: ${{ startsWith(github.ref_name, 'desktop-beta') }}
+          generate_release_notes: true
+          files: dist/Rubato-*

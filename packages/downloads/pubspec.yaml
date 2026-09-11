@@ -1,0 +1,26 @@
+name: aurora_downloads
+description: Download queue — concurrency, retries, verification, quota (spec 12).
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.12.0
+  flutter: '>=3.44.0'
+
+dependencies:
+  aurora_core:
+    path: ../core
+  aurora_database:
+    path: ../database
+  aurora_music_source:
+    path: ../music_source
+  drift: ^2.28.0
+  flutter:
+    sdk: flutter
+  meta: ^1.15.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  test: ^1.25.0
+  very_good_analysis: ^10.3.0

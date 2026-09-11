@@ -1,0 +1,23 @@
+name: aurora_ui_kit
+description: Aurora design system — warm dark listening room theme + components.
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ^3.12.0
+  flutter: '>=3.44.0'
+
+dependencies:
+  aurora_core:
+    path: ../core
+  cached_network_image: ^4.0.0
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^10.3.0
+
+flutter:
+  uses-material-design: true

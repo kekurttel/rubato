@@ -1,0 +1,23 @@
+name: aurora_core
+description: Aurora core — Result, errors, clock, ids, logging, domain models.
+version: 0.1.0
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.12.0
+  meta: ^1.15.0
+  talker: ^5.0.0
+  uuid: ^4.5.0
+
+dev_dependencies:
+  # Pinned as a set: build_runner 2.15.2+ moves to analyzer 13+, which
+  # freezed 3.2.x does not support yet. Re-evaluate when freezed 4 goes
+  # stable (it needs SDK >= 3.13).
+  build_runner: '>=2.15.1 <2.15.2'
+  freezed: ^3.2.0
+  json_serializable: ^6.13.2
+  test: ^1.25.0
+  very_good_analysis: ^10.3.0

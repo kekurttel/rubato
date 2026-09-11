@@ -1,0 +1,26 @@
+name: aurora_playback
+description: Aurora player, queue, audio session (spec section 8).
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.12.0
+  flutter: '>=3.44.0'
+
+dependencies:
+  audio_service: ^0.18.15
+  audio_session: ^0.2.4
+  aurora_core:
+    path: ../core
+  aurora_music_source:
+    path: ../music_source
+  flutter:
+    sdk: flutter
+  just_audio: ^0.10.5
+  meta: ^1.15.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  test: ^1.25.0
+  very_good_analysis: ^10.3.0
